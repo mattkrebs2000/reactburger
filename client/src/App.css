@@ -1,0 +1,98 @@
+body{
+
+background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTiKfZUOLmu1MErperX-wlbRWS6KFFSKIneIMEyPHWuJwdXBSTY);
+  background-size:cover;
+  background-position:center center;
+  background-attachment:fixed;
+  
+
+}
+body .container2 {
+
+  background: rgba(0,0,0,.6);
+    width: inherit;
+    height: fit-content;
+    min-height: 1000px;
+   color: beige;
+   font-family: fantasy;
+   text-align: center;
+   padding:40px;
+   font-size: 22px;
+  
+
+}
+.jumbojumbotron{
+    border: 2px solid yellow;
+   
+    padding: 40px 30px 20px 30px;
+
+
+
+}
+ul{
+
+padding:20px;
+margin-left: auto;
+margin-right:auto;
+list-style-type: none;
+
+}
+button{
+padding: 10px 10px 3px 10px;
+background-color: Green;
+color: white;
+border:2px solid yellow;
+}
+
+
+
+
+
+h1 {
+
+border-bottom: 2px solid yellow;
+border-top: 2px solid yellow;
+padding: 12px 10px 5px 10px;
+
+
+}
+
+.form-group {
+margin-top: 20px;
+
+}
+
+.title{
+margin-bottom: -1.5vw;
+font-size: 10vw;
+
+}
+.subtitle {
+
+font-size: 3vw;
+
+}
+
+li {
+
+  padding-top: 5px;
+padding-bottom: 5px;
+
+
+}
+
+ul button{
+
+  
+padding: 5px 5px 2.5px 5px;
+background-color: Green;
+color: white;
+border:2px solid yellow;
+font-size: 12px;
+}
+
+.gone {
+
+display:none;
+
+}
