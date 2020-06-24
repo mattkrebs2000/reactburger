@@ -1,5 +1,5 @@
 const db = require("../models");
-const md5 = require("md5");
+
 
 // const getSession = (account) => {
 //   return {
@@ -20,7 +20,7 @@ module.exports = {
     console.log("Creating user . . . ");
     let account = req.body;
     account.email = req.body.email.toLowerCase();
-    account.password = md5(req.body.password);
+    account.password = req.body.password;
     db.users
       .create(account)
       .then((dbModel) => {
@@ -46,7 +46,7 @@ db.users
   .then((dbModel) => {
 
 
-    if (md5(req.body.password) === dbModel.password){
+    if (req.body.password === dbModel.password){
 
 console.log("password correct",dbModel)
 

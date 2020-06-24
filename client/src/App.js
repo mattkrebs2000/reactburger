@@ -1,11 +1,42 @@
-import React from "react";
+import React, { Component } from "react";
+import MakeABurger from "./pages/MakeABurger.js"
+import Burgercontainer from "./pages/Burgercontainer.js"
 import "./App.css";
+import { v4 as uuid } from "uuid";
 
-import Welcome from "./pages/Welcome.page";
 
-function App() {
+class App extends Component {
+
+state = {
+  entries: [
+    { 
+      id: uuid(), 
+      entry:"what the heck", 
+      eaten: false, 
+      computer: "" },
+    { 
+      id: uuid(), 
+      entry:"what's up", 
+      eaten: false, 
+      computer: ""  },
+  ],
+};
+
+
+
+AddthisEntry = (entry) => {
+const newentry = {
+id: uuid(),
+entry,
+eaten: false,
+computer: sessionStorage.getItem("id")
+};
+this.setState({entries:[...this.state.entries,newentry] });
+}
+
+ render() {
   return (
-    <div classname="App">
+    <div className="App">
     
       <div className="container2">
         <div>
@@ -18,19 +49,18 @@ function App() {
           </div>
           <br />
           <h1>Burgers Made</h1>
-          <form className="create-form">
-            <div className="form-group">
-              <label htmlFor="newburger">New Burger:</label>
-              <input type="text" id="newburger" name="burger" />
-            </div>
-            <button type="submit">Make It!</button>
-          </form>
+          <MakeABurger Entry={this.AddthisEntry} />
+        
         </div>
         {/* /jumbotron */}
         <div>
           {/* Undevoured Burgers */}
           <div>
-            <ul></ul>
+            <ul>
+
+            <Burgercontainer items={this.state.entries}/>
+            
+            </ul>
           </div>
         </div>
         {/* Devoured Burgers */}
@@ -45,5 +75,5 @@ function App() {
     </div>
   );
 }
-
+}
 export default App;
