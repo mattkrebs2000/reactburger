@@ -79,7 +79,7 @@ class App extends Component {
     console.log(id);
     this.setState({
       entries: this.state.entries.map((data) => {
-        if (data.id === id) {
+        if (data._id === id) {
           data.eaten = true;
         }
         console.log(data.eaten);
@@ -92,8 +92,8 @@ class App extends Component {
   delete = (id) => {
     this.setState(
       {
-        entries: [...this.state.entries.filter((data) => data.id !== id)],
-        EatenBurgers: [...this.state.EatenBurgers.filter((data) => data.id !== id)],
+        entries: [...this.state.entries.filter((data) => data._id !== id)],
+        EatenBurgers: [...this.state.EatenBurgers.filter((data) => data._id !== id)],
       },
       this.inyourtummy(),
       this.findYourBurgers()
@@ -103,6 +103,7 @@ class App extends Component {
 
   AddthisEntry = (entry) => {
     const newentry = {
+     
       entry,
       eaten: false,
       computer: sessionStorage.getItem("id"),

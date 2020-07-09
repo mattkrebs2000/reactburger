@@ -11,7 +11,7 @@ class Burgercontainer extends Component {
              {this.props.burgersmade.map((info)=>
                 
                 
-                <li>{info.entry} burger <button id={info.id} onClick={( )=>this.props.changetoeaten(info.id)}>Eat it</button></li>)}
+                <li>{info.entry} burger <button id={info._id} onClick={( )=>this.props.changetoeaten(info._id)}>Eat it</button></li>)}
            
             </ul>
             

@@ -7,7 +7,7 @@ class Tummy extends Component {
           <div>
             <ul>
               {this.props.EatenBurgers && this.props.EatenBurgers.map((info) => (
-                <li>{info.entry} burger <button id={info.id} onClick={()=>this.props.delete(info.id)}>
+                <li>{info.entry} burger <button id={info._id} onClick={()=>this.props.delete(info._id)}>
                     Poop it!
                   </button>
                 </li>
