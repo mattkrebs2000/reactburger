@@ -2,13 +2,22 @@ import React, { Component } from 'react'
 
 class Burgercontainer extends Component {
     render() {
-         console.log(this.props.items[1].entry);
+     
+        
         return (
+            
 
-            <div>
-             {this.props.items.map((info)=><li>{info.entry} burger </li>)}
-            </div>
+            <ul>
+             {this.props.burgersmade.map((info)=>
+                
+                
+                <li>{info.entry} burger <button id={info.id} onClick={( )=>this.props.changetoeaten(info.id)}>Eat it</button></li>)}
+           
+            </ul>
+            
         )
+          
     }
+  
 }
 export default Burgercontainer;

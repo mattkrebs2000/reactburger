@@ -1,14 +1,13 @@
 const router = require("express").Router();
-const userController = require("../../controllers/userController");
+const burgerController = require("../../controllers/burgerController");
 
 
 //Matches with "api/user" from util/API.js
 router.route("/")
-.get(userController.findAll)
-.post(userController.create);
-
-router.route("/login")
-.post(userController.login);
+.get(burgerController.findAll)
+.post(burgerController.createOne)
+.put(burgerController.editOne)
+.delete(burgerController.deleteOne);
 
 
 module.exports = router;

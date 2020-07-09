@@ -43,7 +43,7 @@ const dbOptions = {
 }
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/braingauge", dbOptions
+  process.env.MONGODB_URI || "mongodb://localhost/burgers", dbOptions
 );
 
 

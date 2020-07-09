@@ -13,6 +13,7 @@ class MakeABurger extends Component {
                    e.preventDefault();
                    this.props.Entry(this.state.entry);
 
+                  
                    this.setState({ entry: "" });
                    
                  };

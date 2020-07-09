@@ -1,36 +1,21 @@
 import axios from "axios";
 
-export default  {
+export default {
   // Saves a user to the database
-  saveUser: function (userData) {
-    return axios.post("/api/users", userData);
-
+  saveBurger: function (burgerData) {
+    return axios.post("/api/burgers", burgerData);
   },
 
-  sendSurvey: function (surveyData) {
-    return axios.post("/api/survey", surveyData);
-
-
+  deleteBurger: function (burgerData) {
+    return axios.delete("/api/burgers", burgerData);
   },
 
-  getUsers: function () {
-    return axios.get("/api/users");
+  changeBurger: function (burgerData) {
+    return axios.put("/api/burgers", burgerData);
   },
 
-  login: function (user) {
-    return axios.post("/api/users/login", user);
-  },
-
-
-  performancedata: function (data) {
-    console.log("performance it is");
-    return axios.post("/api/data/performance",data);
-  },
-
-
-  gameData: function (data) {
-    console.log("Game it is");
-    return axios.post("/api/game",data);
+  getBurgers: function () {
+    return axios.get("/api/burgers");
   },
 };
 
