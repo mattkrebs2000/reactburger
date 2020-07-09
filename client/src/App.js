@@ -13,28 +13,45 @@ class App extends Component {
     EatenBurgers: [],
 
     entries: [
-      {
-        id: uuid(),
-        entry: "what the heck",
-        eaten: false,
-        computer: "",
-      },
-      {
-        id: uuid(),
-        entry: "what's up",
-        eaten: true,
-        computer: "",
-      },
     ],
   };
 
+  // componentDidMount = () => {
+  //   API.getBurgers()
+  //   .then((res) => this.setState({entries:res.data}),
+  
+    
+  //   this.findYourBurgers(),
+  //   this.inyourtummy()
+  //   )
+  // };
+
+
   componentDidMount = () => {
-    API.getBurgers()
-    .then((res) =>
-    console.log("this is the response", res.data),
-    this.findYourBurgers(),
-    this.inyourtummy()
-    )
+
+    let p = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(API.getBurgers());
+      }, 1);
+    });
+
+    p.then((result) => {
+      this.setState({ entries: result.data });
+       console.log("hi ",this.state.entries);
+      return result;
+    })
+      .then((result) => {
+        this.findYourBurgers();
+        console.log("What is the result", result);
+        return result;
+      })
+      .then((result) => {
+        this.inyourtummy();
+        console.log(result);
+        return result;
+      });
+
+
   };
 
   findYourBurgers = () => {
@@ -86,7 +103,6 @@ class App extends Component {
 
   AddthisEntry = (entry) => {
     const newentry = {
-      id: uuid(),
       entry,
       eaten: false,
       computer: sessionStorage.getItem("id"),
