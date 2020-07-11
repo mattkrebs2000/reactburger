@@ -76,11 +76,13 @@ class App extends Component {
   };
 
   changetoeaten = (id) => {
-    console.log(id);
+    console.log("This is the id...", id);
+    API.changeBurger(id);
     this.setState({
       entries: this.state.entries.map((data) => {
         if (data._id === id) {
           data.eaten = true;
+         
         }
         console.log(data.eaten);
         return data;
@@ -108,7 +110,7 @@ class App extends Component {
       eaten: false,
       computer: sessionStorage.getItem("id"),
     };
-
+    API.saveBurger(newentry);
     this.setState({ entries: [...this.state.entries, newentry] });
 
     this.setState({

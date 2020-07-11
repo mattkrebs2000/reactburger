@@ -6,8 +6,8 @@ export default {
     return axios.post("/api/burgers", burgerData);
   },
 
-  deleteBurger: function (burgerData) {
-    return axios.delete("/api/burgers", burgerData);
+  deleteBurger: function (id, burgerData) {
+    return axios.delete("/api/burgers" + id, burgerData);
   },
 
   changeBurger: function (burgerData) {
