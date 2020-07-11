@@ -92,6 +92,7 @@ class App extends Component {
   };
 
   delete = (id) => {
+     API.deleteBurger(id);
     this.setState(
       {
         entries: [...this.state.entries.filter((data) => data._id !== id)],

@@ -7,11 +7,11 @@ export default {
   },
 
   deleteBurger: function (id, burgerData) {
-    return axios.delete("/api/burgers" + id, burgerData);
+    return axios.delete("/api/burgers/" + id, burgerData);
   },
 
-  changeBurger: function (burgerData) {
-    return axios.put("/api/burgers", burgerData);
+  changeBurger: function (id, burgerData) {
+    return axios.put("/api/burgers/" + id, burgerData);
   },
 
   getBurgers: function () {

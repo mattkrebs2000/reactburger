@@ -15,7 +15,7 @@ module.exports = {
     console.log("Edit is working . . . ",req.body);
     db.burgers
       .findOneAndUpdate(
-        { _id: req.params._id },
+        { _id: req.params.id },
         { $set: { eaten: true } },
         { new: true },
         function (err, doc) {}
@@ -26,25 +26,21 @@ module.exports = {
       })
       .catch((err) => res.status(422).json(err));
   },
-  // editOne: function (req, res) {
-  //   console.log("Edit is working . . . ");
-  //   db.burgers
-  //     .findOneAndUpdate(
-  //       { entry: "what 1" },
-  //       { $set: { eaten: true } },
-  //       { new: true },
-  //       function (err, doc) {}
-  //     )
-  //     .then((dbUser) => {
-  //       console.log("Changed to");
-  //       res.json(dbUser);
-  //     })
-  //     .catch((err) => res.status(422).json(err));
-  // },
+ 
 
   deleteOne: function (req, res) {
     console.log("delete is working");
     console.log(res);
+       db.burgers
+         .findOneAndRemove(
+           { _id: req.params.id },
+           function (err, doc) {}
+         )
+         .then((dbUser) => {
+           console.log("Changed to");
+           res.json(dbUser);
+         })
+         .catch((err) => res.status(422).json(err));
   },
 
   createOne: function (req, res) {

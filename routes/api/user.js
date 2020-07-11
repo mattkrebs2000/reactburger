@@ -11,7 +11,7 @@ router.route("/")
 
 
 //Matches with "/api/burgers/:id"
-router.route("/")
+router.route("/:id")
 
   .put(burgerController.editOne)
   .delete(burgerController.deleteOne);
