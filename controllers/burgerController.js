@@ -3,7 +3,7 @@ const db = require("../models");
 module.exports = {
   findAll: function (req, res) {
     db.burgers.find().then((dbModel) => {
-      console.log("working");
+      console.log("YOU ARE working");
 
       // console.log(res);
       console.log(dbModel);

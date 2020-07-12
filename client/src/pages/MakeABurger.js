@@ -12,8 +12,6 @@ class MakeABurger extends Component {
                  submititfunction = (e) => {
                    e.preventDefault();
                    this.props.Entry(this.state.entry);
-
-                  
                    this.setState({ entry: "" });
                    
                  };
