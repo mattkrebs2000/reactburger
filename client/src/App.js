@@ -88,47 +88,22 @@ class App extends Component {
 
   delete = (id) => {
     API.deleteBurger(id);
-    this.setState(
-      {
-        entries: [...this.state.entries.filter((data) => data._id !== id)],
-        EatenBurgers: [
-          ...this.state.EatenBurgers.filter((data) => data._id !== id),
-        ],
-      },
-      this.inyourtummy(),
-      this.findYourBurgers()
-    );
+      this.findYourBurgers();
+  this.setState(
+    {
+      entries: [...this.state.entries.filter((data) => data._id !== id)],
+
+      EatenBurgers: [
+        ...this.state.EatenBurgers.filter((data) => data._id !== id)
+      ],
+    },
+    this.inyourtummy(),
+    this.findYourBurgers()
+  );
+   
   };
 
-  // AddthisEntry = (entry) => {
-  //   const newentry = {
-  //     entry,
-  //     eaten: false,
-  //     computer: sessionStorage.getItem("id"),
-  //   };
-  //   let f = new Promise((resolve, reject) => {
-  //     setTimeout(() => {
-  //       resolve(API.saveBurger(newentry)), API.getBurgers();
-  //     }, 1);
-  //   });
-  //   f.then((result) => {
-  //     this.setState({ entries: result.data });
-  //     return result;
-  //   })
-  //     .then(() => {
-  //       console.log(this.state.entries);
-  //       this.findYourBurgers();
-  //     })
-  //     .then(() => {
-  //       this.setState(
-  //         {
-  //           FilteredBurgers: [...this.state.FilteredBurgers],
-  //         },
-  //         this.inyourtummy(),
-  //         this.findYourBurgers()
-  //       );
-  //     });
-  // };
+ 
 
   AddthisEntry = (entry) => {
     const newentry = {
@@ -137,9 +112,10 @@ class App extends Component {
       computer: sessionStorage.getItem("id"),
     };
 
-    API.saveBurger(newentry);
-    API.getBurgers()
-
+    API.saveBurger(newentry)
+      .then(() => {
+        API.getBurgers()
+      
       .then((result) => {
         this.setState({ entries: result.data });
       })
@@ -156,7 +132,8 @@ class App extends Component {
           this.findYourBurgers()
         );
       });
-  };
+  });
+};
 
   render() {
     return (
