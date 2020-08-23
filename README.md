@@ -3,20 +3,15 @@
 
 ![alt text][logo]
 
-[logo]: https://github.com/mattkrebs1974/BrainGauge/blob/master/BrainGauge.png
+[logo]: https://github.com/mattkrebs2000/reactburger/blob/master/burger.png
 
-This React App takes in users performance on simple mental exercises and gives feedback to the user on how that performance relates to the users self-ratings on "Mood" "Sleep" "Exercise" and "Hunger". 
+This MERN (MongoDB, Express, React, Node) App takes in user input (Burger), stores it in MongoDB, then distributes the information based on whether or not the 'Burger' has been eaten or not. 
 
 ## Deployment 
 
-This application can be found [here.](https://braingaugefinalproject.herokuapp.com/)
+This application can be found [here.](https://burger-for-your-computer.herokuapp.com/)
 
 ## User Experience
 
-After the page loads a you will be able to either create a user (if it is your first time visiting) or login. 
-Once you have registered and logged in you will take a survey answering 4 questions meant to gauge your "Mood" "Sleep" "Exercise" and "Hunger". 
-
-After taking the survey you will play the Game which tests your reaction time. 
-
-After playing the game you will be able to see how your Reaction Time as compared with any of your survey answers compare to past results for those survey questions. 
+After page loads, input the name of your favorite burger and "Make it." Then press "Eat it" to send the burger to the tummy. After that you may press "poop it" to get rid of it altogether. The App has been made in such a way that the what you see on the site is based on particular IP addresses. Every IP address will have a different accounting of bugers made and eaten.  
 
