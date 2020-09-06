@@ -1,4 +1,4 @@
-# FinalProject
+# React Burger App
 
 
 ![alt text][logo]
