@@ -9,7 +9,7 @@ This MERN (MongoDB, Express, React, Node) App takes in user input (Burger), stor
 
 ## Deployment 
 
-This application can be found [here.](https://burger-for-your-computer.herokuapp.com/)
+Clone --> npm start
 
 ## User Experience
 

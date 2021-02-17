@@ -30,7 +30,7 @@ class MakeABurger extends Component {
                          onSubmit={this.submititfunction}
                        >
                          <div className="form-group">
-                           <label htmlFor="newburger">New Burger:</label>
+                           <label htmlForm="newburger">New Burger:</label>
                            <input
                              type="text"
                              id="newburger"
